@@ -6,7 +6,20 @@ namespace BeFaster.App.Solutions.CHK
     {
         public static int ComputePrice(string skus)
         {
-            throw new SolutionNotImplementedException();
+            return GetPrice(skus[0]);
+        }
+
+        private static int GetPrice(char sku)
+        {
+            switch (sku)
+            {
+                case 'A': return 50;
+                case 'B': return 30;
+                case 'C': return 20;
+                case 'D': return 15;
+                default: return 0;
+            }
         }
     }
 }
+
