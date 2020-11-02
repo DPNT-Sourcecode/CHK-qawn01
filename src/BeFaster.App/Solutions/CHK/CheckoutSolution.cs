@@ -19,6 +19,26 @@ namespace BeFaster.App.Solutions.CHK
                     { 'D', 15 },
                     { 'E', 40 },
                     { 'F', 10 },
+                    { 'G', 20 },
+                    { 'H', 10 },
+                    { 'I', 35 },
+                    { 'J', 60 },
+                    { 'K', 80 },
+                    { 'L', 90 },
+                    { 'M', 15 },
+                    { 'N', 40 },
+                    { 'O', 10 },
+                    { 'P', 50 },
+                    { 'Q', 30 },
+                    { 'R', 50 },
+                    { 'S', 30 },
+                    { 'T', 20 },
+                    { 'U', 40 },
+                    { 'V', 50 },
+                    { 'W', 20 },
+                    { 'X', 90 },
+                    { 'Y', 10 },
+                    { 'Z', 50 },
                 };
                 var discountConfigs = new List<DiscountConfig>
                 {
@@ -27,6 +47,16 @@ namespace BeFaster.App.Solutions.CHK
                     new DiscountConfig(30, new DiscountQualifyingSku('E', 2), new DiscountQualifyingSku('B', 1)),
                     new DiscountConfig(15, new DiscountQualifyingSku('B', 2)),
                     new DiscountConfig(10, new DiscountQualifyingSku('F', 3)),
+                    new DiscountConfig(20, new DiscountQualifyingSku('H', 10)),
+                    new DiscountConfig(5, new DiscountQualifyingSku('H', 5)),
+                    new DiscountConfig(10, new DiscountQualifyingSku('K', 2)),
+                    new DiscountConfig(15, new DiscountQualifyingSku('N', 3), new DiscountQualifyingSku('M', 1)),
+                    new DiscountConfig(50, new DiscountQualifyingSku('P', 5)),
+                    new DiscountConfig(30, new DiscountQualifyingSku('R', 3), new DiscountQualifyingSku('Q', 1)),
+                    new DiscountConfig(10, new DiscountQualifyingSku('Q', 3)),
+                    new DiscountConfig(40, new DiscountQualifyingSku('U', 4)),
+                    new DiscountConfig(20, new DiscountQualifyingSku('V', 3)),
+                    new DiscountConfig(10, new DiscountQualifyingSku('V', 2)),
                 };
 
                 var skuCounts = new Dictionary<char, int>();
@@ -68,3 +98,4 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
+
