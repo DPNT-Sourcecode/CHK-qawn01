@@ -1,5 +1,6 @@
 ﻿using BeFaster.Runner.Exceptions;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace BeFaster.App.Solutions.CHK
@@ -11,23 +12,31 @@ namespace BeFaster.App.Solutions.CHK
             try
             {
                 int totalBeforeDiscount = 0;
-                int aCount = 0;
-                int bCount = 0;
-                int eCount = 0;
-                int fCount = 0;
+                var skuPrices = new Dictionary<char, int>
+                {
+                    { 'A', 50 },
+                    { 'B', 30 },
+                    { 'C', 20 },
+                    { 'D', 15 },
+                    { 'E', 40 },
+                    { 'F', 10 },
+                };
+                var skuCounts = new Dictionary<char, int>();
+                foreach (char sku in skuPrices.Keys)
+                {
+                    skuCounts[sku] = 0;
+                }
+
                 foreach (char sku in skus)
                 {
-                    totalBeforeDiscount += GetPrice(sku);
-                    if (sku == 'A') { aCount++; }
-                    if (sku == 'B') { bCount++; }
-                    if (sku == 'E') { eCount++; }
-                    if (sku == 'F') { fCount++; }
+                    totalBeforeDiscount += GetPrice(sku, skuPrices);
+                    skuCounts[sku]++;
                 }
-                int aLargeDiscounts = aCount / 5;
-                int aSmallDiscounts = (aCount % 5) / 3;
-                int bFreeCount = Math.Min(eCount / 2, bCount);
-                int bDiscounts = (bCount - bFreeCount) / 2;
-                int fFreeCount = (fCount / 3);
+                int aLargeDiscounts = skuCounts['A'] / 5;
+                int aSmallDiscounts = (skuCounts['A'] % 5) / 3;
+                int bFreeCount = Math.Min(skuCounts['E'] / 2, skuCounts['B']);
+                int bDiscounts = (skuCounts['B'] - bFreeCount) / 2;
+                int fFreeCount = (skuCounts['F'] / 3);
 
                 int aDiscount = 50 * aLargeDiscounts + 20 * aSmallDiscounts;
                 int bDiscount = 30 * bFreeCount + 15 * bDiscounts;
@@ -40,17 +49,16 @@ namespace BeFaster.App.Solutions.CHK
             }
         }
 
-        private static int GetPrice(char sku)
+        private static int GetPrice(char sku, Dictionary<char, int> skuPrices)
         {
-            switch (sku)
+            int price;
+            if(skuPrices.TryGetValue(sku, out price))
             {
-                case 'A': return 50;
-                case 'B': return 30;
-                case 'C': return 20;
-                case 'D': return 15;
-                case 'E': return 40;
-                case 'F': return 10;
-                default: throw new InvalidSkuException(sku);
+                return price;
+            }
+            else
+            {
+                throw new InvalidSkuException(sku);
             }
         }
     }
