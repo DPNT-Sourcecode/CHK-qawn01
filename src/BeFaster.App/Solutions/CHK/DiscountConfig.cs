@@ -17,7 +17,12 @@ namespace BeFaster.App.Solutions.CHK
 
         internal int CalculateDiscount(Dictionary<char, int> skuCounts)
         {
-            return Discount * QualifyingSkus.Min(qs => skuCounts[qs.Sku] / qs.QualifyingCount);
+            int discountCount = QualifyingSkus.Min(qs => skuCounts[qs.Sku] / qs.QualifyingCount);
+            foreach(DiscountQualifyingSku qs in QualifyingSkus)
+            {
+                skuCounts[qs.Sku] -= qs.QualifyingCount * discountCount;
+            }
+            return Discount * discountCount;
         }
     }
 
