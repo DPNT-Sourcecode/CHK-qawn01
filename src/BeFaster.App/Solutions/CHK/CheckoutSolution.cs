@@ -23,7 +23,7 @@ namespace BeFaster.App.Solutions.CHK
                     { 'H', 10 },
                     { 'I', 35 },
                     { 'J', 60 },
-                    { 'K', 80 },
+                    { 'K', 70 },
                     { 'L', 90 },
                     { 'M', 15 },
                     { 'N', 40 },
@@ -31,14 +31,14 @@ namespace BeFaster.App.Solutions.CHK
                     { 'P', 50 },
                     { 'Q', 30 },
                     { 'R', 50 },
-                    { 'S', 30 },
+                    { 'S', 20 },
                     { 'T', 20 },
                     { 'U', 40 },
                     { 'V', 50 },
                     { 'W', 20 },
-                    { 'X', 90 },
-                    { 'Y', 10 },
-                    { 'Z', 50 },
+                    { 'X', 17 },
+                    { 'Y', 20 },
+                    { 'Z', 21 },
                 };
                 var discountConfigs = new List<DiscountConfig>
                 {
@@ -49,7 +49,7 @@ namespace BeFaster.App.Solutions.CHK
                     new DiscountConfig(10, new DiscountQualifyingSku('F', 3)),
                     new DiscountConfig(20, new DiscountQualifyingSku('H', 10)),
                     new DiscountConfig(5, new DiscountQualifyingSku('H', 5)),
-                    new DiscountConfig(10, new DiscountQualifyingSku('K', 2)),
+                    new DiscountConfig(20, new DiscountQualifyingSku('K', 2)),
                     new DiscountConfig(15, new DiscountQualifyingSku('N', 3), new DiscountQualifyingSku('M', 1)),
                     new DiscountConfig(50, new DiscountQualifyingSku('P', 5)),
                     new DiscountConfig(30, new DiscountQualifyingSku('R', 3), new DiscountQualifyingSku('Q', 1)),
@@ -98,4 +98,5 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
+
 

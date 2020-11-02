@@ -55,7 +55,7 @@ namespace BeFaster.App.Tests.Solutions.CHK
         [TestCase("H", 10)]
         [TestCase("I", 35)]
         [TestCase("J", 60)]
-        [TestCase("K", 80)]
+        [TestCase("K", 70)]
         [TestCase("L", 90)]
         [TestCase("M", 15)]
         [TestCase("N", 40)]
@@ -63,17 +63,17 @@ namespace BeFaster.App.Tests.Solutions.CHK
         [TestCase("P", 50)]
         [TestCase("Q", 30)]
         [TestCase("R", 50)]
-        [TestCase("S", 30)]
+        [TestCase("S", 20)]
         [TestCase("T", 20)]
         [TestCase("U", 40)]
         [TestCase("V", 50)]
         [TestCase("W", 20)]
-        [TestCase("X", 90)]
-        [TestCase("Y", 10)]
-        [TestCase("Z", 50)] 
+        [TestCase("X", 17)]
+        [TestCase("Y", 20)]
+        [TestCase("Z", 21)] 
         [TestCase("HHHHH", 45)]
         [TestCase("HHHHHHHHHH", 80)]
-        [TestCase("KK", 150)]
+        [TestCase("KK", 120)]
         [TestCase("NNNM", 120)]
         [TestCase("PPPPP", 200)]
         [TestCase("QQQ", 80)]
@@ -85,6 +85,14 @@ namespace BeFaster.App.Tests.Solutions.CHK
         [TestCase("VV", 90)]
         [TestCase("VVV", 130)]
         [TestCase("VVVV", 180)]
+        [TestCase("XXX", 45)]
+        [TestCase("XXY", 45)]
+        [TestCase("XYZ", 45)]
+        [TestCase("ZYY", 45)]
+        [TestCase("ZXZ", 45)]
+        [TestCase("XXYZX", 79)]
+        [TestCase("XYZZ", 62)]
+        [TestCase("ZYYX", 62)]
         public void TestCheckout(string skus, int expectedTotal)
         {
             int actualTotal = CheckoutSolution.ComputePrice(skus);
@@ -92,5 +100,6 @@ namespace BeFaster.App.Tests.Solutions.CHK
         }
     }
 }
+
 
 
