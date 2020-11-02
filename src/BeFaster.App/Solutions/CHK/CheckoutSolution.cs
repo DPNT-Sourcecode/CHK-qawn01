@@ -14,12 +14,14 @@ namespace BeFaster.App.Solutions.CHK
                 int aCount = 0;
                 int bCount = 0;
                 int eCount = 0;
+                int fCount = 0;
                 foreach (char sku in skus)
                 {
                     totalBeforeDiscount += GetPrice(sku);
                     if (sku == 'A') { aCount++; }
                     if (sku == 'B') { bCount++; }
                     if (sku == 'E') { eCount++; }
+                    if (sku == 'F') { fCount++; }
                 }
                 int aLargeDiscounts = aCount / 5;
                 int aSmallDiscounts = (aCount % 5) / 3;
@@ -45,9 +47,11 @@ namespace BeFaster.App.Solutions.CHK
                 case 'C': return 20;
                 case 'D': return 15;
                 case 'E': return 40;
+                case 'F': return 10;
                 default: throw new InvalidSkuException(sku);
             }
         }
     }
 }
+
 

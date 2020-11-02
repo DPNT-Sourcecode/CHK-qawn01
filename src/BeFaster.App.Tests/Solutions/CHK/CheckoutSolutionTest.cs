@@ -45,6 +45,12 @@ namespace BeFaster.App.Tests.Solutions.CHK
         [TestCase("EEEEBBB", 190)]
         [TestCase("AAAAA", 200)]
         [TestCase("AAAAAA", 250)]
+        [TestCase("F", 10)]
+        [TestCase("FF", 20)]
+        [TestCase("FFF", 20)]
+        [TestCase("FFFF", 30)]
+        [TestCase("FFFFF", 40)]
+        [TestCase("FFFFFF", 40)]
         public void TestCheckout(string skus, int expectedTotal)
         {
             int actualTotal = CheckoutSolution.ComputePrice(skus);
@@ -52,5 +58,6 @@ namespace BeFaster.App.Tests.Solutions.CHK
         }
     }
 }
+
 
 
