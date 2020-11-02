@@ -27,10 +27,12 @@ namespace BeFaster.App.Solutions.CHK
                 int aSmallDiscounts = (aCount % 5) / 3;
                 int bFreeCount = Math.Min(eCount / 2, bCount);
                 int bDiscounts = (bCount - bFreeCount) / 2;
+                int fFreeCount = (fCount / 3);
 
                 int aDiscount = 50 * aLargeDiscounts + 20 * aSmallDiscounts;
                 int bDiscount = 30 * bFreeCount + 15 * bDiscounts;
-                return totalBeforeDiscount - aDiscount - bDiscount;
+                int fDiscount = 10 * fFreeCount;
+                return totalBeforeDiscount - aDiscount - bDiscount - fDiscount;
             }
             catch (InvalidSkuException)
             {
@@ -53,5 +55,6 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
+
 
 
