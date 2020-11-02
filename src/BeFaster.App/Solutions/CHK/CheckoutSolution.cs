@@ -7,7 +7,9 @@ namespace BeFaster.App.Solutions.CHK
     {
         public static int ComputePrice(string skus)
         {
-            return skus.Sum(c => GetPrice(c));
+            return skus.Sum(c => GetPrice(c))
+                - ((skus.Count(c => c == 'A')) / 3) * 20
+                - ((skus.Count(c => c == 'B')) / 2) * 15;
         }
 
         private static int GetPrice(char sku)
@@ -23,5 +25,6 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
+
 
 
