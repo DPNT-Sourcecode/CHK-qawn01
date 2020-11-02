@@ -70,7 +70,7 @@ namespace BeFaster.App.Tests.Solutions.CHK
         [TestCase("W", 20)]
         [TestCase("X", 90)]
         [TestCase("Y", 10)]
-        [TestCase("Z", 50)]
+        [TestCase("Z", 50)] 
         [TestCase("HHHHH", 45)]
         [TestCase("HHHHHHHHHH", 80)]
         [TestCase("KK", 150)]
@@ -92,4 +92,5 @@ namespace BeFaster.App.Tests.Solutions.CHK
         }
     }
 }
+
 
