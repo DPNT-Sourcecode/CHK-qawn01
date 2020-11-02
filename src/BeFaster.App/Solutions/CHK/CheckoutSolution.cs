@@ -57,7 +57,7 @@ namespace BeFaster.App.Solutions.CHK
                     new DiscountConfig(120, new DiscountQualifyingSku('U', 4)),
                     new DiscountConfig(130, new DiscountQualifyingSku('V', 3)),
                     new DiscountConfig(90, new DiscountQualifyingSku('V', 2)),
-                    new DiscountConfig(45, new DiscountQualifyingSku("ZYSTX", 2))
+                    new DiscountConfig(45, new DiscountQualifyingSku("ZYSTX", 3))
                 };
 
                 var skuCounts = new Dictionary<char, int>();
@@ -99,3 +99,4 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
+
